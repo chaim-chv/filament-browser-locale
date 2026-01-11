@@ -1,0 +1,23 @@
+{
+  "name": "chaim-chv/filament-browser-locale",
+  "description": "Automatically set Filament locale from browser preferred language",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "filament/filament": "^4.0",
+    "illuminate/support": "^12.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ChaimChv\\FilamentBrowserLocale\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ChaimChv\\FilamentBrowserLocale\\FilamentBrowserLocaleServiceProvider"
+      ]
+    }
+  }
+}

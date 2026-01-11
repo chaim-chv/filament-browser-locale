@@ -1,0 +1,20 @@
+name: Update Packagist on Tag
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  update-packagist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify Packagist
+        run: |
+          echo "Updating Packagist for tag $GITHUB_REF..."
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.PACKAGIST_TOKEN }}" \
+            -d '{"repository":"https://github.com/${GITHUB_REPOSITORY}"}' \
+            https://packagist.org/api/update-package
