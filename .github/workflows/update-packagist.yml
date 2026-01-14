@@ -16,5 +16,5 @@ jobs:
           curl -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.PACKAGIST_TOKEN }}" \
-            -d '{"repository":"https://github.com/${GITHUB_REPOSITORY}"}' \
+            -d '{"repository":"https://github.com/${{ github.repository }}"}' \
             https://packagist.org/api/update-package
