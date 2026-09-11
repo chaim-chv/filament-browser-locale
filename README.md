@@ -2,9 +2,14 @@
 
 Filament panel plugin that Automatically sets the Filament panel locale based on the browser's `Accept-Language` header ("preferred languages").
 
+## Requirements
+
+- PHP 8.2+
+- Laravel 11.28+ / 12 / 13
+- Filament v4 or v5
+
 ## Features
-- Laravel 12 compatible
-- Filament v3+ compatible
+- Filament v4 and v5 compatible
 - Normalizes `en-US` → `en` (configurable)
 - Configurable supported locales
 - No global middleware required
@@ -58,6 +63,14 @@ class ExamplePanel extends PanelProvider
 ```
 
 You can also set the supported locales via global configuration (see below), in which case you can initialize the plugin without any options.
+
+## Testing
+
+```bash
+composer test
+```
+
+The test suite runs against both Filament v4 and v5 via the CI matrix.
 
 ## Configuration
 

@@ -53,6 +53,7 @@ class BrowserLocalePlugin implements Plugin
     }
 
     foreach ($languages as $language) {
+      $language = str_replace("_", "-", $language);
       $locale = $normalize ? Str::before($language, "-") : $language;
       if (in_array($locale, $supported, true)) {
         App::setLocale($locale);
